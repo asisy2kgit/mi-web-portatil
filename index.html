@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Primera Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidalgo Sur - Proyecto Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Variables de color extraídas del original */
+        :root {
+            --primary: 118 22% 48%; /* Un tono verde oliva/naturaleza */
+            --accent: 12 47% 60%;  /* Tono cálido/tierra */
+            --background: 93 11% 90%;
+            --border: 93 11% 80%;
+        }
+        body {
+            background-color: hsl(var(--background));
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <h1>¡Hola Mundo! 👋</h1>
-    <p>Esta es mi aplicación web portátil.</p>
+<body class="antialiased text-foreground">
+
+    <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="container mx-auto flex h-16 items-center justify-between px-4">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl font-bold tracking-tighter text-primary">HIDALGO SUR</span>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="#" class="transition-colors hover:text-primary">Inicio</a>
+                <a href="#" class="transition-colors hover:text-primary">Departamentos</a>
+                <a href="#" class="transition-colors hover:text-primary">Amenidades</a>
+                <a href="#" class="transition-colors hover:text-primary">Contacto</a>
+            </nav>
+            <button class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary/90">
+                Ver Disponibilidad
+            </button>
+        </div>
+    </header>
+
+    <section class="relative h-[60vh] md:h-[80vh] overflow-hidden">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80" 
+             alt="Hidalgo Sur" class="absolute inset-0 h-full w-full object-cover">
+        <div class="container relative z-20 mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-white">
+            <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+                Vive el Sur con Estilo
+            </h1>
+            <p class="mt-4 max-w-[700px] text-lg text-neutral-200 md:text-xl">
+                Exclusividad y naturaleza en el corazón de la zona sur. Descubre tu nuevo hogar.
+            </p>
+        </div>
+    </section>
+
+    <main class="container mx-auto py-12 px-4">
+        <h2 class="mb-12 text-center text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+            Nuestros Espacios
+        </h2>
+        
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div class="group overflow-hidden rounded-lg border bg-card shadow-lg transition-shadow hover:shadow-xl">
+                <div class="aspect-video relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80" 
+                         class="object-cover transition-transform duration-300 group-hover:scale-105" alt="Departamento">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold">Modelo Ámbar</h3>
+                    <p class="mt-2 text-muted-foreground">2 Recámaras | 2 Baños | 85m²</p>
+                    <button class="mt-4 text-sm font-bold text-accent hover:underline">Ver detalles →</button>
+                </div>
+            </div>
+            </div>
+    </main>
+
+    <footer class="border-t bg-secondary/50 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm text-muted-foreground">
+                © 2026 Hidalgo Sur. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
